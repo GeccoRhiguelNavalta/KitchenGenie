@@ -1,6 +1,138 @@
+/* Dashboard component */
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 }
+
+/* logo component */
+.Logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  height: 60px;
+  border: solid #73648a 3.5px;
+  border-radius: 5px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logoimg{
+ height: 100%;
+ width: 100%;
+}
+
+/* Main component */
+.MainInput{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  width:50%;
+  height: 40vh;
+  background-color: #9882ac7c;
+  border-radius: 5px;
+}
+
+.InputForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25vh;
+  width: 18vw;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px grey;
+  background-color: #73648a;
+}
+
+h2{
+  font-weight: 550;
+  font-size: 15px;
+  color: aliceblue;
+  }
+  
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+    font-size: 10px;
+    border-radius: 5px;
+    border-style: none;
+    color: aliceblue;
+  }
+  
+  input{
+    height: 25px;
+    width: 150px;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    border-radius: 5px;
+    border: 1px solid grey;
+    text-align: center;
+  }
+  
+  button{
+    height: 20px;
+    width: 75px;
+    background-color:#9882AC;
+    border-style: none;
+    border-radius: 5px;
+    color: aliceblue;
+    font-weight: 600;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  .IngredientsList{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 35vh;
+    width: 25vw;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px grey;
+    background-color: #73648a;
+    color: aliceblue;
+    font-size: 15px;
+  }
+
+  p{
+    font-size: 20px;
+    font-weight: 600;
+    color: aliceblue;
+  }
+
+  /* Recipe component */
+  .RecipesHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    width:50%;
+    height: 50vh;
+    background-color: #9882ac7c;
+    border-radius: 5px;
+    overflow-y: scroll;
+  }
+
+  .RecipeItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 45vh;
+    width: 80%;
+    border-radius: 2px;
+    box-shadow: 0px 0px 2px grey;
+    background-color: #73648a;
+    color: aliceblue;
+  }
+
