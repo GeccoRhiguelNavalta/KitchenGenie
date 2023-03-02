@@ -27,7 +27,11 @@ export default function RecipesHolder() {
   return (
     <div className="RecipesHolder">
       {/* pass down recipes as props for recipeitem to render */}
-        <RecipeItem recipes={recipes} />
+      {recipes.map((item)=> {
+        return(
+        <RecipeItem key={recipes.index} recipes={item} />
+        )
+      })}
     </div>
   );
 }
