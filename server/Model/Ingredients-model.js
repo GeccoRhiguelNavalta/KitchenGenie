@@ -11,6 +11,7 @@ const ingredientSchema = new mongoose.Schema({
   }
 });
 
+//make model
 const Ingredient = mongoose.model('Ingredient', ingredientSchema);
 
 //'postIngredients' function for control

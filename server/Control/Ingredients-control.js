@@ -9,7 +9,6 @@ const {
 
 //create 'add ingredient' function for router
 const addIngredients = async (request, response) => {
-  console.log(request.body,'reqbod');
   try {
     await postIngredients(request.body.ingredients);
     response.status(201);

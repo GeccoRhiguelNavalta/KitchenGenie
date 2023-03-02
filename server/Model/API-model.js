@@ -21,12 +21,12 @@ const apiURL = "https://api.edamam.com/api/recipes/v2";
 //'getMatchedRecipes' function for control
 const getMatchedRecipes = async () => {
   const ingredients = await getIngredients();
-  let ing = '';
-  ingredients.map((item) => {
-    ing = item.name;
-  });
+  let ings = [];
+  ingredients.map((item)=> {
+    ings.push(item.name);
+  })
   const results = await fetch(
-    `${apiURL}/?type=public&q=${ing}&app_id=${apiID}&app_key=${apiKey}`
+    `${apiURL}/?type=public&q=${ings}&app_id=${apiID}&app_key=${apiKey}`
   ).then((response) => response.json());
   return results;
 };
