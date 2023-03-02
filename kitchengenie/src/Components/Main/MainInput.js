@@ -13,7 +13,7 @@ import React, { useContext } from "react";
 export default function MainInput() {
 
   //passing data using context
-  const data = useContext(Context);
+  const {data} = useContext(Context);
 
   return (
     <div className="MainInput">

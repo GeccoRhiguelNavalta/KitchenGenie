@@ -1,29 +1,18 @@
 //get react lib
-import React, { useState, useEffect } from "react";
-
-//get helper function from utils file
-import { getRecipe } from "../../Utils/APIreqs";
+import React, { useContext } from "react";
 
 //import child component to render
 import RecipeItem from "./RecipeItem";
+
+//Access Context
+import Context from "../../Context/DataContext.js";
 
 //creating and exporting RecipesHolder function component, essentially
 //just a container
 export default function RecipesHolder() {
 
-  // inititate state of recipes
-  const [recipes, setRecipes] = useState([]);
-
-  //get recipe from server
-  async function fetchRecipes() {
-    const fetchedrecipes = await getRecipe();
-    setRecipes(fetchedrecipes);
-  }
-
-  //auto re render on any changes on the recipes
-  useEffect(() => {
-    fetchRecipes();
-  }, []);
+ //passing data using context
+ const {recipes} = useContext(Context);
 
   return (
     <div className="RecipesHolder">

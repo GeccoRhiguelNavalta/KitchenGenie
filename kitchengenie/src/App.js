@@ -8,10 +8,10 @@ import RecipesHolder from "./Components/Recipes/RecipesHolder";
 import React, { useState, useEffect } from "react";
 
 //import context
-import Context from './Context/DataContext'
+import Context from "./Context/DataContext";
 
 //get helper functions from utility file
-import { getAll } from './Utils/APIreqs';
+import { getAll, getRecipe } from "./Utils/APIreqs";
 
 //main component
 function App() {
@@ -21,31 +21,35 @@ function App() {
   //async function to get data from mongoDB (client's ingredients input from input form)
   async function fetchData() {
     try {
-    const fetchedData = await getAll();
-    setData(fetchedData);
+      const fetchedData = await getAll();
+      setData(fetchedData);
     } catch (error) {
-    console.log(error);
+      console.log(error);
     }
-    }
-  
-  //function to check if any input from client and data changes to re render DOM
-  // async function checking() {
-  //   return (submitted) ? fetchData() : null;
-  // }
-  
+  }
+
+  // inititate state of recipes
+  const [recipes, setRecipes] = useState([]);
+
+  //get recipe from server
+  async function fetchRecipes() {
+    const fetchedrecipes = await getRecipe();
+    setRecipes(fetchedrecipes);
+  }
+
   //render data on first load
-  useEffect(()=>{
+  useEffect(() => {
     fetchData();
-    // checking();
-  },[])
+    fetchRecipes();
+  }, []);
 
   return (
     <div className="App">
       {/* render all main child components and wrapped components in Context.Provider that needs data */}
       <Logo />
-      <Context.Provider value={data}>
-      <MainInput />
-      <RecipesHolder />
+      <Context.Provider value={{data, recipes }}>
+        <MainInput />
+        <RecipesHolder />
       </Context.Provider>
     </div>
   );

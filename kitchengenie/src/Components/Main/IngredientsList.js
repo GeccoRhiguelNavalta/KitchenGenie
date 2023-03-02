@@ -2,7 +2,7 @@
 import { deleteOne } from "../../Utils/APIreqs";
 
 //get react lib
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 
 //Access Context
 import Context from "../../Context/DataContext.js";
@@ -10,15 +10,13 @@ import Context from "../../Context/DataContext.js";
 //creating and exporting IngredientsList function component
 export default function IngredientsList() {
   //access data from context store
-  const data = useContext(Context);
-  
+  const data  = useContext(Context);
+
   //function to handle delete button using Utils helper function
   const handleDelete = (id) => {
     deleteOne(id);
   };
 
-  //render data on first load
-  useEffect(() => {}, [data]);
 
   return (
     <div className="IngredientsList">

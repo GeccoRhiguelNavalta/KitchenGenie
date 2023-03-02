@@ -1,20 +1,14 @@
 //get react lib
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 
 //get helper functions from utility file
 import { postMany } from "../../Utils/APIreqs";
-
-//import context
-import Context from '../../Context/DataContext'
 
 //creating and exporting InputForm function component
 export default function InputForm() {
 
   // inititate state of ingredients
   const [ingredients, setIngredients] = useState("");
-
-  //set state on submit
-  const [submitted, setSubmitted] = useState(false);
 
   //setting value of ingredients on event change on the form
   function onChange(event) {
@@ -26,7 +20,6 @@ export default function InputForm() {
     e.preventDefault();
     postMany({ ingredients: ingredientsArray });
     setIngredients("");
-    setSubmitted(true);
   }
 
   //disabled add button if no input value from client

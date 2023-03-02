@@ -14,10 +14,9 @@ export default function RecipeItem(props) {
     // render target data from api
     <div className="RecipeItem">
       <div className="left-container">
-        <img className="recipeImg" src={rec.image} />
+        <img className="recipeImg" src={rec.image} alt="recipe"/>
         <div className="right-container">
           <div className="ingredients">
-            {" "}
             <span>Main Ingredients:</span>
             {rec.ingredientLines.map((ing, index) => {
               return <ul key={index}>{ing}</ul>;
