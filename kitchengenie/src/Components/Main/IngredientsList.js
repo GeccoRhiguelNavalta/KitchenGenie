@@ -1,31 +1,24 @@
 //get helper functions from utility file
-import { getAll, deleteOne } from "../../Utils/APIreqs";
+import { deleteOne } from "../../Utils/APIreqs";
 
 //get react lib
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+
+//Access Context
+import Context from "../../Context/DataContext.js";
 
 //creating and exporting IngredientsList function component
 export default function IngredientsList() {
+  //access data from context store
+  const data = useContext(Context);
   
-  // inititate state of data being used
-  const [data, setData] = useState([]);
-
-  //async function to get data from mongoDB (client's ingredients input from input form)
-  async function fetchData() {
-    const fetchedData = await getAll();
-    setData(fetchedData);
-    console.log(fetchedData);
-  }
-
   //function to handle delete button using Utils helper function
   const handleDelete = (id) => {
     deleteOne(id);
   };
 
-  //auto re render on any changes on the data
-  useEffect(() => {
-    fetchData();
-  }, []);
+  //render data on first load
+  useEffect(() => {}, [data]);
 
   return (
     <div className="IngredientsList">
