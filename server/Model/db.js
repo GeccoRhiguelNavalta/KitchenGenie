@@ -6,14 +6,6 @@ const mongoose = require("mongoose");
 //stop logging to console
 mongoose.set("strictQuery", false);
 
-//make schema
-const ingredientSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  }
-});
-
 //connect to server mongoDB IIFE
 (async function Connect() {
   try {
@@ -24,7 +16,5 @@ const ingredientSchema = new mongoose.Schema({
   }
 })();
 
-const Ingredient = mongoose.model('Ingredient', ingredientSchema);
-
 //export Ingredient model for ingredients-model file
-module.exports = Ingredient;
+module.exports = mongoose;

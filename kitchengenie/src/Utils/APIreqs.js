@@ -13,13 +13,13 @@ async function getAll() {
 }
 
 //helper function to post a new ingredient
-async function postOne(ingredient) {
+async function postMany(ingredients) {
   await fetch(`${rootURL}/add`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name: `${ingredient}` }),
+    body: JSON.stringify(ingredients),
   });
 }
 
@@ -40,4 +40,4 @@ async function getRecipe() {
 }
 
 //export all functions for components to use all throughout the app
-export { getAll, postOne, deleteOne, getRecipe };
+export { getAll, postMany, deleteOne, getRecipe };

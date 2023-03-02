@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 
 //get helper functions from utility file
-import { postOne } from "../../Utils/APIreqs";
+import {postMany } from "../../Utils/APIreqs";
 
 //creating and exporting InputForm function component
 export default function InputForm() {
@@ -19,12 +19,15 @@ export default function InputForm() {
   function handleSubmit(event) {
     event.preventDefault();
     const ingredientsArray = ingredients.split(",");
-    postOne(ingredientsArray);
+    postMany({ ingredients: ingredientsArray });
     setIngredients("");
   }
+  
 
-  //disabled add button if no input value from client NEED TO FIX!
-  const isDisabled = !ingredients;
+  //disabled add button if no input value from client
+  const ingredientsArray = ingredients.split(","); // consider using regex to get all words from string
+  const isDisabled = ingredientsArray.length < 3;
+  
   return (
     <div className="InputForm">
       <h2>ADD INGREDIENTS</h2>
@@ -38,7 +41,6 @@ export default function InputForm() {
           value={ingredients}
           onChange={onChange}
         />
-        {/* NEED TO FIX */}
         <button type="Add" disabled={isDisabled}>
           Add
         </button>

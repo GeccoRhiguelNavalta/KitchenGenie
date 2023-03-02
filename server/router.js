@@ -4,7 +4,7 @@
 const router = require('express').Router();
 
 //bring in control ingredients functions
-const {retrieveIngredients, addIngredient, deleteIngredient} = require('./Control/Ingredients-control');
+const {retrieveIngredients, addIngredients, deleteIngredient} = require('./Control/Ingredients-control');
 
 //bring in control API functions
 const {getRecipes} = require('./Control/API-control');
@@ -13,7 +13,7 @@ const {getRecipes} = require('./Control/API-control');
 const { requestRateLimiter } = require('./Middleware/rate-limiter');
 
 //direct requests end points
-router.post('/add', addIngredient);
+router.post('/add', addIngredients);
 router.get('/list', retrieveIngredients);
 router.delete('/:id', deleteIngredient)
 

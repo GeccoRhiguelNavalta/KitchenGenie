@@ -134,7 +134,7 @@ h2, p, span{
     background-color: #73648a;
     color: aliceblue;
     margin-top: 10px;
-    padding: 5px;
+    padding: 15px;
     font-size: 15px;
   }
 
@@ -176,7 +176,85 @@ h2, p, span{
   }
 
 
+/* Mobile devices */
+@media only screen and (max-width: 600px) {
+  /* Dashboard component */
+  .App {
+    margin-top: 10px;
+  }
 
+  /* logo component */
+  .Logo{
+    width: 250px;
+    height: 40px;
+    border-width: 2px;
+  }
+
+  /* Main component */
+  .MainInput{
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .InputForm{
+    height: auto;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  h2, p, span{
+    font-size: 16px;
+  }
+
+  input{
+    height: 20px;
+    width: 80%;
+    font-size: 12px;
+  }
+
+  button{
+    height: 25px;
+    width: 60%;
+    font-size: 14px;
+  }
+
+  .IngredientsList{
+    height: auto;
+    width: 90%;
+  }
+
+  /* Recipe component */
+  .RecipesHolder{
+    width: 90%;
+    height: auto;
+  }
+
+  .RecipeItem {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .recipeImg{
+    width: 100px;
+    height: 100px;
+  }
+
+  .right-container{
+    width: 70%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .left-container{
+    margin-right: 5px;
+  }
+
+  ul{
+    font-size: 10px;
+  }
+}
 
 
 
