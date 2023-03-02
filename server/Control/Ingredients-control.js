@@ -10,9 +10,9 @@ const {
 //create 'add ingredient' function for router
 const addIngredients = async (request, response) => {
   try {
-    await postIngredients(request.body.ingredients);
+    const mongodbIng = await postIngredients(request.body.ingredients);
     response.status(201);
-    response.send("added new item");
+    response.send(mongodbIng);
   } catch (error) {
     console.log("error :", error);
     response.sendStatus(400);

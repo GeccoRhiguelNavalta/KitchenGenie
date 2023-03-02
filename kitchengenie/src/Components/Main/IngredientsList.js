@@ -6,25 +6,26 @@ import React, { useState, useEffect } from "react";
 
 //creating and exporting IngredientsList function component
 export default function IngredientsList() {
-
-// inititate state of data being used 
+  
+  // inititate state of data being used
   const [data, setData] = useState([]);
 
-//async function to get data from mongoDB (client's ingredients input from input form)
+  //async function to get data from mongoDB (client's ingredients input from input form)
   async function fetchData() {
     const fetchedData = await getAll();
     setData(fetchedData);
+    console.log(fetchedData);
   }
 
-//function to handle delete button using Utils helper function
+  //function to handle delete button using Utils helper function
   const handleDelete = (id) => {
-    deleteOne(id)
+    deleteOne(id);
   };
 
-//auto re render on any changes on the data
+  //auto re render on any changes on the data
   useEffect(() => {
     fetchData();
-  }, [data]);
+  }, []);
 
   return (
     <div className="IngredientsList">
@@ -34,7 +35,6 @@ export default function IngredientsList() {
       {data.length === 0 ? (
         <div className="noIng">NO INGREDIENTS YET...!</div>
       ) : (
-
         /* iterate through data to render ingredients */
 
         data.map((ing) => {

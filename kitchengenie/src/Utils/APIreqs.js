@@ -14,13 +14,14 @@ async function getAll() {
 
 //helper function to post a new ingredient
 async function postMany(ingredients) {
-  await fetch(`${rootURL}/add`, {
+  const response = await fetch(`${rootURL}/add`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(ingredients),
   });
+  return response.json();
 }
 
 //helper function to delete an ingredient
