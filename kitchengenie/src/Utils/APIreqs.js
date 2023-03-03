@@ -26,9 +26,10 @@ async function postMany(ingredients) {
 
 //helper function to delete an ingredient
 async function deleteOne(id) {
-  await fetch(`${rootURL}/${id}`, {
+  const response = await fetch(`${rootURL}/${id}`, {
     method: "DELETE",
   });
+  return response.json();
 }
 
 //helper function to get recipes from database that has clients ingredients

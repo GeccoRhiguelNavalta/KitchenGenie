@@ -13,12 +13,12 @@ import React, { useContext } from "react";
 export default function MainInput() {
 
   //passing data using context
-  const {data} = useContext(Context);
+  const {data,ingredients, setIngredients} = useContext(Context);
 
   return (
     <div className="MainInput">
+      <Context.Provider value={{data, ingredients, setIngredients}}>
       <InputForm />
-      <Context.Provider value={data}>
       <IngredientsList />
       </Context.Provider>
     </div>

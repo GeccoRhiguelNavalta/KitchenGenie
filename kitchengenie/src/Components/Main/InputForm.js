@@ -1,29 +1,36 @@
 //get react lib
-import React, { useState} from "react";
+import React, { useState, useContext} from "react";
 
 //get helper functions from utility file
 import { postMany } from "../../Utils/APIreqs";
 
+//Access Context
+import Context from "../../Context/DataContext";
+
 //creating and exporting InputForm function component
 export default function InputForm() {
+  //usestate for text input
+  const [textValue, setTextValue] = useState('');
 
-  // inititate state of ingredients
-  const [ingredients, setIngredients] = useState("");
+  //access ingredients from context store
+  const {setIngredients}  = useContext(Context);
 
   //setting value of ingredients on event change on the form
   function onChange(event) {
-    setIngredients(event.target.value);
+   setTextValue(event.target.value);
   }
 
   //sending values to server to store in DB
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    postMany({ ingredients: ingredientsArray });
-    setIngredients("");
+    const res = await postMany({ ingredients: textValue.split(",") });
+    console.log(res, 'res');
+    setIngredients(res);
+    setTextValue('');
   }
 
   //disabled add button if no input value from client
-  const ingredientsArray = ingredients.split(","); // consider using regex to get all words from string
+  const ingredientsArray = textValue.split(","); // consider using regex to get all words from string
   const isDisabled = ingredientsArray.length < 3;
 
   return (
@@ -36,7 +43,7 @@ export default function InputForm() {
           name="ingredients"
           placeholder="Rice,Tomato..."
           type="text"
-          value={ingredients}
+          value={textValue}
           onChange={onChange}
         />
         <button type="Add" disabled={isDisabled}>

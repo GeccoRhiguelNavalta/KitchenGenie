@@ -27,7 +27,7 @@ const getIngredients = () => {
 };
 
 //'removeIngredient' function for control
-const removeIngredient = (id) => {
+const removeIngredient = async (id) => {
   return Ingredient.findByIdAndRemove(id);
 };
 

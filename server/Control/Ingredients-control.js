@@ -36,7 +36,7 @@ const deleteIngredient = async (request, response) => {
   try {
     await removeIngredient(request.params.id);
     response.status(201);
-    response.send("removed item");
+    response.send(res);
   } catch (error) {
     console.log("error :", error);
     response.sendStatus(400);

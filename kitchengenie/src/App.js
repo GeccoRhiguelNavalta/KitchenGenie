@@ -15,21 +15,23 @@ import { getAll, getRecipe } from "./Utils/APIreqs";
 
 //main component
 function App() {
-  // inititate state of data being used
-  const [data, setData] = useState([]);
+  // // inititate state of data being used
+  // const [data, setData] = useState([]);
+
+  // inititate state of ingredients
+  const [ingredients, setIngredients] = useState([]);
+  // inititate state of recipes
+  const [recipes, setRecipes] = useState([]);
 
   //async function to get data from mongoDB (client's ingredients input from input form)
-  async function fetchData() {
+  async function fetchIngredients() {
     try {
       const fetchedData = await getAll();
-      setData(fetchedData);
+      setIngredients(fetchedData);
     } catch (error) {
       console.log(error);
     }
   }
-
-  // inititate state of recipes
-  const [recipes, setRecipes] = useState([]);
 
   //get recipe from server
   async function fetchRecipes() {
@@ -39,7 +41,7 @@ function App() {
 
   //render data on first load
   useEffect(() => {
-    fetchData();
+    fetchIngredients();
     fetchRecipes();
   }, []);
 
@@ -47,7 +49,7 @@ function App() {
     <div className="App">
       {/* render all main child components and wrapped components in Context.Provider that needs data */}
       <Logo />
-      <Context.Provider value={{data, recipes }}>
+      <Context.Provider value={{recipes, ingredients, setIngredients}}>
         <MainInput />
         <RecipesHolder />
       </Context.Provider>

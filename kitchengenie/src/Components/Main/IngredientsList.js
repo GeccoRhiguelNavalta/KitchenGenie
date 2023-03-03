@@ -10,11 +10,12 @@ import Context from "../../Context/DataContext.js";
 //creating and exporting IngredientsList function component
 export default function IngredientsList() {
   //access data from context store
-  const data  = useContext(Context);
+  const {ingredients, setIngredients}  = useContext(Context);
 
   //function to handle delete button using Utils helper function
-  const handleDelete = (id) => {
-    deleteOne(id);
+  const handleDelete = async (id) => {
+    const res = await deleteOne(id);
+    setIngredients(res);
   };
 
 
@@ -23,12 +24,12 @@ export default function IngredientsList() {
       <p>PANTRY</p>
 
       {/* ternary condition on what to render if no ingredients or have ingredients */}
-      {data.length === 0 ? (
+      {ingredients.length === 0 ? (
         <div className="noIng">NO INGREDIENTS YET...!</div>
       ) : (
         /* iterate through data to render ingredients */
 
-        data.map((ing) => {
+        ingredients.map((ing) => {
           return (
             <div key={ing._id}>
               <span>{ing.name}</span>
