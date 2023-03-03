@@ -17,8 +17,10 @@ router.post('/add', addIngredients);
 router.get('/list', retrieveIngredients);
 router.delete('/:id', deleteIngredient)
 
-//direct API-DB request end point
-router.get('/recipe', getRecipes);
+/*direct API-DB request end point
+//request limiter avoids client side over loading API calls due to cost
+quota is only 10 calls per minute */
+router.get('/recipe',requestRateLimiter, getRecipes);
 
 //export router for server link
 module.exports = router;
