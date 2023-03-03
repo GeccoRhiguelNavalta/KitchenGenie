@@ -14,7 +14,7 @@ const addIngredients = async (request, response) => {
     response.status(201);
     response.send(mongodbIng);
   } catch (error) {
-    console.log("error :", error);
+    console.error("error :");
     response.sendStatus(400);
   }
 };
@@ -26,7 +26,7 @@ const retrieveIngredients = async (request, response) => {
     response.status(200);
     response.send(ing);
   } catch (error) {
-    console.log("error :", error);
+    console.error("error :");
     response.sendStatus(500);
   }
 };
@@ -36,9 +36,9 @@ const deleteIngredient = async (request, response) => {
   try {
     await removeIngredient(request.params.id);
     response.status(201);
-    response.send(res);
+    // response.send() maybe json obj 'success'
   } catch (error) {
-    console.log("error :", error);
+    console.error("error :");
     response.sendStatus(400);
   }
 };

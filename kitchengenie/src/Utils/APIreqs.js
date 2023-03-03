@@ -6,39 +6,56 @@ const rootURL = "http://localhost:3001";
 //helper function to get all ingredients
 async function getAll() {
   let retrievedData = [];
-  await fetch(`${rootURL}/list`)
-    .then((response) => response.json())
-    .then((fetchedData) => (retrievedData = fetchedData));
-  return retrievedData;
+  try {
+    await fetch(`${rootURL}/list`)
+      .then((response) => response.json())
+      .then((fetchedData) => (retrievedData = fetchedData));
+    return retrievedData;
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 //helper function to post a new ingredient
 async function postMany(ingredients) {
-  const response = await fetch(`${rootURL}/add`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(ingredients),
-  });
-  return response.json();
+  try {
+    const response = await fetch(`${rootURL}/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(ingredients),
+    });
+    return response.json();
+  } catch (error) {
+    console.error(error)
+  }
 }
 
 //helper function to delete an ingredient
 async function deleteOne(id) {
-  const response = await fetch(`${rootURL}/${id}`, {
-    method: "DELETE",
-  });
-  return response.json();
+  try {
+    const response = await fetch(`${rootURL}/${id}`, {
+      method: "DELETE",
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 //helper function to get recipes from database that has clients ingredients
 async function getRecipe() {
-  let retrievedRecipe = [];
-  await fetch(`${rootURL}/recipe`)
-    .then((response) => response.json())
-    .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
-  return retrievedRecipe;
+  try {
+    let retrievedRecipe = [];
+    await fetch(`${rootURL}/recipe`)
+      .then((response) => response.json())
+      .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
+    return retrievedRecipe;
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 //export all functions for components to use all throughout the app

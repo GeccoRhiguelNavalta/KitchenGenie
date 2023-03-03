@@ -13,7 +13,7 @@ export default function InputForm() {
   const [textValue, setTextValue] = useState('');
 
   //access ingredients from context store
-  const {setIngredients}  = useContext(Context);
+  const {setIngredients, fetchIngredients}  = useContext(Context);
 
   //setting value of ingredients on event change on the form
   function onChange(event) {
@@ -24,8 +24,8 @@ export default function InputForm() {
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await postMany({ ingredients: textValue.split(",") });
-    console.log(res, 'res');
     setIngredients(res);
+    await fetchIngredients();
     setTextValue('');
   }
 

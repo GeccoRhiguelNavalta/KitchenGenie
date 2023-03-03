@@ -9,35 +9,33 @@ import Context from "../../Context/DataContext.js";
 
 //creating and exporting IngredientsList function component
 export default function IngredientsList() {
+  
   //access data from context store
-  const {ingredients, setIngredients}  = useContext(Context);
+  const {ingredients, setIngredients} = useContext(Context);
 
   //function to handle delete button using Utils helper function
   const handleDelete = async (id) => {
-    const res = await deleteOne(id);
-    setIngredients(res);
+    try {
+      await deleteOne(id);
+      const updatedIngredients = ingredients.filter((ing) => ing._id !== id);
+      setIngredients(updatedIngredients);
+    } catch (error) {
+      console.error(error)
+    }
   };
-
 
   return (
     <div className="IngredientsList">
-      <p>PANTRY</p>
-
-      {/* ternary condition on what to render if no ingredients or have ingredients */}
-      {ingredients.length === 0 ? (
-        <div className="noIng">NO INGREDIENTS YET...!</div>
-      ) : (
-        /* iterate through data to render ingredients */
-
-        ingredients.map((ing) => {
+    <div className="pantry">PANTRY</div>
+        {ingredients.map((ing) => {
           return (
-            <div key={ing._id}>
+            <div className="ing" key={ing._id}>
               <span>{ing.name}</span>
               <button onClick={() => handleDelete(ing._id)}>Delete</button>
             </div>
           );
         })
-      )}
+      }
     </div>
   );
 }

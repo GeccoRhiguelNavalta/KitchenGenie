@@ -15,9 +15,7 @@ import { getAll, getRecipe } from "./Utils/APIreqs";
 
 //main component
 function App() {
-  // // inititate state of data being used
-  // const [data, setData] = useState([]);
-
+  console.log('App()');
   // inititate state of ingredients
   const [ingredients, setIngredients] = useState([]);
   // inititate state of recipes
@@ -49,7 +47,7 @@ function App() {
     <div className="App">
       {/* render all main child components and wrapped components in Context.Provider that needs data */}
       <Logo />
-      <Context.Provider value={{recipes, ingredients, setIngredients}}>
+      <Context.Provider value={{recipes, ingredients, setIngredients,fetchIngredients}}>
         <MainInput />
         <RecipesHolder />
       </Context.Provider>

@@ -12,8 +12,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 60px;
+  width: 500px;
+  height: 80px;
   border: solid #73648a 3.5px;
   border-radius: 5px;
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
@@ -27,11 +27,11 @@
 /* Main component */
 .MainInput{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top: 10px;
   width:50%;
-  height: 40vh;
+  height: 30vh;
   background-color: #9882ac7c;
   border-radius: 5px;
 }
@@ -46,9 +46,10 @@
   border-radius: 2px;
   box-shadow: 0px 0px 2px grey;
   background-color: #73648a;
+  contain: content;
 }
 
-h2, p, span{
+.pantry, h2, span{
   font-weight: 550;
   font-size: 20px;
   color: aliceblue;
@@ -93,19 +94,44 @@ h2, p, span{
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
   }
 
+/* IngredientsList */
   .IngredientsList{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 35vh;
+    align-items: flex-start; 
+    height: 25vh;
     width: 25vw;
     border-radius: 2px;
     box-shadow: 0px 0px 2px grey;
     background-color: #73648a;
     color: aliceblue;
     font-size: 15px;
-  }
+    overflow-y: scroll;
+}
+
+.pantry, .Recipes{
+  margin: auto;
+  padding: 10px;
+}
+
+.noIng {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ing {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin-bottom:auto;
+    padding: 5px;
+    border-radius: 2px;
+    color: #73648a;
+}
 
   /* Recipe component */
   .RecipesHolder{
@@ -121,6 +147,14 @@ h2, p, span{
     border-radius: 5px;
     overflow-y: scroll;
   }
+
+  .Recipes{
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+    margin-top: 10px;
+  }
+
 
   .RecipeItem {
     display: flex;
