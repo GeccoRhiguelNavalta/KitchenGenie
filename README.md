@@ -1,3 +1,5 @@
+![alt text](https://github.com/GeccoRhiguelNavalta/KitchenGenie/blob/main/kitchengenie/src/assets/Logo.png "Logo Title Text 1")
+
 # KitchenGenie - A Recipe Finder App
 
 KitchenGenie is a recipe finder app that allows users to input at least three ingredients and fetches recipes from an API that contains those ingredients. The app is named after the genie with three wishes since users are required to input three ingredients.
