@@ -46,9 +46,10 @@ export default function InputForm() {
           value={textValue}
           onChange={onChange}
         />
-        <button type="Add" disabled={isDisabled}>
-          Add
-        </button>
+        <button type="Add" disabled={isDisabled} className={isDisabled ? "disabled" : ""}>
+  Add
+</button>
+
       </form>
     </div>
   );

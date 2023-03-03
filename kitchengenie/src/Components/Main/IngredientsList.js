@@ -14,11 +14,13 @@ export default function IngredientsList() {
   const {ingredients, setIngredients} = useContext(Context);
 
   //function to handle delete button using Utils helper function
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     try {
-      await deleteOne(id);
-      const updatedIngredients = ingredients.filter((ing) => ing._id !== id);
-      setIngredients(updatedIngredients);
+      (async function dbDelete() {
+        await deleteOne(id);
+      })()
+      const newArr = ingredients.filter(ing => ing._id !== id)
+      setIngredients(newArr);
     } catch (error) {
       console.error(error)
     }

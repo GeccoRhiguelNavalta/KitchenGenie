@@ -94,13 +94,19 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
   }
 
+  .disabled {
+    pointer-events: none;
+    background-color: rgba(255, 0, 0, 0.412);
+    opacity: 0.6;
+  }
+  
+
 /* IngredientsList */
   .IngredientsList{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    padding-left: 10px;
     align-items: center;
-    align-items: flex-start; 
     height: 25vh;
     width: 25vw;
     border-radius: 2px;

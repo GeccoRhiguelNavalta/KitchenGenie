@@ -35,7 +35,7 @@ const retrieveIngredients = async (request, response) => {
 const deleteIngredient = async (request, response) => {
   try {
     await removeIngredient(request.params.id);
-    response.status(201);
+    response.status(201)
     // response.send() maybe json obj 'success'
   } catch (error) {
     console.error("error :");

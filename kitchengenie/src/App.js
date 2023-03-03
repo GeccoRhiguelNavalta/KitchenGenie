@@ -15,7 +15,6 @@ import { getAll, getRecipe } from "./Utils/APIreqs";
 
 //main component
 function App() {
-  console.log('App()');
   // inititate state of ingredients
   const [ingredients, setIngredients] = useState([]);
   // inititate state of recipes
@@ -33,8 +32,12 @@ function App() {
 
   //get recipe from server
   async function fetchRecipes() {
-    const fetchedrecipes = await getRecipe();
-    setRecipes(fetchedrecipes);
+    try {
+      const fetchedrecipes = await getRecipe();
+      setRecipes(fetchedrecipes);
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   //render data on first load
