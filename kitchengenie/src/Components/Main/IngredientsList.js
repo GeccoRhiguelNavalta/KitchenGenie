@@ -11,7 +11,7 @@ import Context from "../../Context/DataContext.js";
 export default function IngredientsList() {
   
   //access data from context store
-  const {ingredients, setIngredients} = useContext(Context);
+  const {ingredients, setIngredients } = useContext(Context);
 
   //function to handle delete button using Utils helper function
   const handleDelete = (id) => {
@@ -19,7 +19,7 @@ export default function IngredientsList() {
       (async function dbDelete() {
         await deleteOne(id);
       })()
-      const newArr = ingredients.filter(ing => ing._id !== id)
+      const newArr = ingredients.filter(ing => ing._id !== id);
       setIngredients(newArr);
     } catch (error) {
       console.error(error)

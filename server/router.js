@@ -18,7 +18,7 @@ router.get('/list', retrieveIngredients);
 router.delete('/:id', deleteIngredient)
 
 //direct API-DB request end point
-router.get('/recipe', requestRateLimiter, getRecipes);
+router.get('/recipe', getRecipes);
 
 //export router for server link
 module.exports = router;

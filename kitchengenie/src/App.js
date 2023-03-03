@@ -43,14 +43,17 @@ function App() {
   //render data on first load
   useEffect(() => {
     fetchIngredients();
-    fetchRecipes();
   }, []);
+  
+  useEffect(() => {
+    fetchRecipes();
+  }, [ingredients]);
 
   return (
     <div className="App">
       {/* render all main child components and wrapped components in Context.Provider that needs data */}
       <Logo />
-      <Context.Provider value={{recipes, ingredients, setIngredients,fetchIngredients}}>
+      <Context.Provider value={{recipes, ingredients, setIngredients,setRecipes}}>
         <MainInput />
         <RecipesHolder />
       </Context.Provider>
