@@ -1,20 +1,18 @@
 //utility file for fetch requests from client to server
 
 //root server url
-// const rootURL = "https://tasty-pocketbook-clam.cyclic.app";
-const rootURL = 'http://localhost:3001';
+const rootURL = "http://localhost:3001";
 
 //helper function to get all ingredients
 async function getAll() {
   let retrievedData = [];
   try {
     await fetch(`${rootURL}/list`)
-    // await fetch(`${rootURL}/list`)
       .then((response) => response.json())
       .then((fetchedData) => (retrievedData = fetchedData));
     return retrievedData;
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 
@@ -30,7 +28,7 @@ async function postMany(ingredients) {
     });
     return response.json();
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 
@@ -56,7 +54,7 @@ async function getRecipe() {
       .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
     return retrievedRecipe;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 

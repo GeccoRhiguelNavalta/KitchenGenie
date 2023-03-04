@@ -1,9 +1,5 @@
 ![alt text](https://github.com/GeccoRhiguelNavalta/KitchenGenie/blob/main/kitchengenie/src/assets/Logo.png "Logo Title Text 1")
 
-# Link to deployed client side app on Cyclic: 
-
-https://tasty-pocketbook-clam.cyclic.app
-
 # KitchenGenie - A Recipe Finder App
 
 KitchenGenie is a recipe finder app that allows users to input at least three ingredients and fetches recipes from an API that contains those ingredients. The app is named after the genie with three wishes since users are required to input three ingredients.
@@ -22,7 +18,6 @@ The following technologies were used to develop KitchenGenie:
 * express-rate-limiter: A package used to limit the number of requests made to the API
 * CORS: A package used to enable Cross-Origin Resource Sharing
 * Dotenv: A zero-dependency module that loads environment variables from a .env file
-* Cyclic: Deployment
 
 ### Limitations
 Due to the API limitations, the app can only send ten requests per minute. Therefore, if you continuously enter or delete  ingredients more than the limit, the app will have a cool down period (approx. < 1 min). 
