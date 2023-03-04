@@ -13,7 +13,7 @@ require('dotenv').config();
 const app = express();
 
 //declare port
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 
 //initiate cors middleware
 app.use(cors());
@@ -26,6 +26,18 @@ const router = require('./router');
 
 //initiate router
 app.use(router);
+
+//serve front end
+app.use(express.static(path.join(__dirname, "./kitchengenie/build")));
+
+app.get("*", function (_, res) {
+  res.sendFile(
+    path.join(__dirname, "./kitchengenie/build/index.html"),
+    function (err) {
+      res.status(500).send(err);
+    }
+  );
+});
 
 //connect server
 app.listen(PORT, () => {

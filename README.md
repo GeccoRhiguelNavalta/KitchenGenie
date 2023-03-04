@@ -2,12 +2,7 @@
 
 # Link to deployed client side app on Netlify: 
 
-https://dapper-babka-b9389a.netlify.app/
-
-# Link to deployed server side on Cyclic: 
-
 https://tasty-pocketbook-clam.cyclic.app
-
 
 # KitchenGenie - A Recipe Finder App
 
@@ -27,8 +22,7 @@ The following technologies were used to develop KitchenGenie:
 * express-rate-limiter: A package used to limit the number of requests made to the API
 * CORS: A package used to enable Cross-Origin Resource Sharing
 * Dotenv: A zero-dependency module that loads environment variables from a .env file
-* Netlify: Client side React file deployement
-* Cyclic: Server side Express and MongoDB Atlas deployment
+* Cyclic: Deployment
 
 ### Limitations
 Due to the API limitations, the app can only send ten requests per minute. Therefore, if you continuously enter or delete  ingredients more than the limit, the app will have a cool down period (approx. < 1 min). 
