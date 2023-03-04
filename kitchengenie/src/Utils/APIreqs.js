@@ -1,7 +1,7 @@
 //utility file for fetch requests from client to server
 
 //root server url
-const rootURL = "http://localhost:3001";
+const rootURL = "https://tasty-pocketbook-clam.cyclic.app:3001";
 
 //helper function to get all ingredients
 async function getAll() {
