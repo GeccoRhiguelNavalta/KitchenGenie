@@ -3,13 +3,16 @@
 //get mongoose ORM
 const mongoose = require("mongoose");
 
+//get dotenv
+require('dotenv').config();
+
 //stop logging to console
 mongoose.set("strictQuery", false);
 
 //connect to server mongoDB IIFE
 (async function Connect() {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/Ingredients");
+    await mongoose.connect(`${process.env.DATABASE_URL}`);
     console.log("connected to MongoDB");
   } catch (error) {
     console.error("DB error: ", error);
