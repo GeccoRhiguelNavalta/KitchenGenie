@@ -1,6 +1,6 @@
 ![alt text](https://github.com/GeccoRhiguelNavalta/KitchenGenie/blob/main/kitchengenie/src/assets/Logo.png "Logo Title Text 1")
 
-# Link to deployed client side app on Netlify: 
+# Link to deployed client side app on Cyclic: 
 
 https://tasty-pocketbook-clam.cyclic.app
 
