@@ -10,7 +10,7 @@ const cors = require('cors');
 require('dotenv').config();
 
 //get path
-const path = require('path');
+// const path = require('path');
 
 //initiate instance of express
 const app = express();

@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "node index.js",
-    "index" : "nodemon index.js",
-    "client" : "npm start --prefix kitchengenie",
-    "dev" : "con-currently \"npm run start\" \"npm run client\" "
+    "kitchengenie": "npm start --prefix kitchengenie",
+    "server": "node server/index.js",
+    "dev": "concurrently \"npm run kitchengenie\" \"npm run server\" "
   },
   "repository": {
     "type": "git",

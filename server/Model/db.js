@@ -12,7 +12,7 @@ mongoose.set("strictQuery", false);
 //connect to server mongoDB IIFE
 (async function Connect() {
   try {
-    await mongoose.connect(process.env.DATABASE_URL);
+    await mongoose.connect(`${process.env.DATABASE_URL}`);
     console.log("connected to MongoDB");
   } catch (error) {
     console.error("DB error: ", error);

@@ -1,6 +1,8 @@
 //get logo png
 import MyLogo from '../assets/Logo.png'
 
+import React from 'react';
+
 //creating and exporting Logo function component, essentially
 //just a container for the logo png
 export default function Logo() {
