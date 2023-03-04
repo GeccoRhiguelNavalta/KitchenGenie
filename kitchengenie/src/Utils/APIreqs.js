@@ -1,13 +1,14 @@
 //utility file for fetch requests from client to server
 
 //root server url
-// const rootURL = "https://tasty-pocketbook-clam.cyclic.app:3001";
+// const rootURL = "https://tasty-pocketbook-clam.cyclic.app";
+const rootURL = 'http://localhost:3001';
 
 //helper function to get all ingredients
 async function getAll() {
   let retrievedData = [];
   try {
-    await fetch(`/list`)
+    await fetch(`${rootURL}/list`)
     // await fetch(`${rootURL}/list`)
       .then((response) => response.json())
       .then((fetchedData) => (retrievedData = fetchedData));
@@ -20,7 +21,7 @@ async function getAll() {
 //helper function to post a new ingredient
 async function postMany(ingredients) {
   try {
-    const response = await fetch(`/add`, {
+    const response = await fetch(`${rootURL}/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +37,7 @@ async function postMany(ingredients) {
 //helper function to delete an ingredient
 async function deleteOne(id) {
   try {
-    const response = await fetch(`/${id}`, {
+    const response = await fetch(`${rootURL}/${id}`, {
       method: "DELETE",
     });
     const data = await response.json();
@@ -50,7 +51,7 @@ async function deleteOne(id) {
 async function getRecipe() {
   try {
     let retrievedRecipe = [];
-    await fetch(`/recipe`)
+    await fetch(`${rootURL}/recipe`)
       .then((response) => response.json())
       .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
     return retrievedRecipe;

@@ -31,16 +31,16 @@ const router = require('./router');
 app.use(router);
 
 //serve front end
-app.use(express.static(path.join(__dirname, "./kitchengenie/build")));
+// app.use(express.static(path.join(__dirname, "./kitchengenie/build")));
 
-app.get("*", function (req, res) {
-  res.sendFile(
-    path.join(__dirname, "./kitchengenie/build/index.html"),
-    function (err) {
-      res.status(500).send(err);
-    }
-  );
-});
+// app.get("*", function (req, res) {
+//   res.sendFile(
+//     path.join(__dirname, "./kitchengenie/build/index.html"),
+//     function (err) {
+//       res.status(500).send(err);
+//     }
+//   );
+// });
 
 //connect server
 app.listen(PORT, () => {
