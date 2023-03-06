@@ -1,17 +1,10 @@
-//import all child components and css file
 import "./App.css";
 import Logo from "./Components/Logo";
 import MainInput from "./Components/Main/MainInput";
 import RecipesHolder from "./Components/Recipes/RecipesHolder";
 import ReactSwitch from "react-switch";
-
-//get react lib
 import React, { useState, useEffect } from "react";
-
-//import context
 import Context from "./Context/DataContext";
-
-//get helper functions from utility file
 import { getAll, getRecipe } from "./Utils/APIreqs";
 
 //main component
@@ -60,7 +53,6 @@ function App() {
 
   return (
     <div className="App" id={theme}>
-      {/* render all main child components and wrapped components in Context.Provider that needs data */}
       <Context.Provider
         value={{
           recipes,

@@ -1,6 +1,5 @@
 //utility file for fetch requests from client to server
 
-//root server url
 const rootURL = "http://localhost:3001";
 
 //helper function to get all ingredients
@@ -58,5 +57,4 @@ async function getRecipe() {
   }
 }
 
-//export all functions for components to use all throughout the app
 export { getAll, postMany, deleteOne, getRecipe };

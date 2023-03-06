@@ -12,7 +12,7 @@
 }
 
 #dark {
-    background-color: #453750;
+  background-color: #453750;
 }
 
 
@@ -30,8 +30,8 @@
 }
 
 .logoimg{
- height: 100%;
- width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* Main component */
@@ -63,7 +63,7 @@
   font-weight: 550;
   font-size: 20px;
   color: aliceblue;
-  }
+}
   
   form{
     display: flex;
@@ -104,27 +104,27 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
   }
 
-  .disabled {
-    pointer-events: none;
-    background-color: rgba(255, 0, 0, 0.412);
-    opacity: 0.6;
-  }
+.disabled {
+  pointer-events: none;
+  background-color: rgba(255, 0, 0, 0.412);
+  opacity: 0.6;
+}
   
 
 /* IngredientsList */
-  .IngredientsList{
-    display: flex;
-    flex-direction: column;
-    padding-left: 10px;
-    align-items: center;
-    height: 25vh;
-    width: 25vw;
-    border-radius: 2px;
-    box-shadow: 0px 0px 2px grey;
-    background-color: #73648a;
-    color: aliceblue;
-    font-size: 15px;
-    overflow-y: scroll;
+.IngredientsList{
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  align-items: center;
+  height: 25vh;
+  width: 25vw;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px grey;
+  background-color: #73648a;
+  color: aliceblue;
+  font-size: 15px;
+  overflow-y: scroll;
 }
 
 .pantry, .Recipes{
@@ -139,79 +139,79 @@
 }
 
 .ing {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 95%;
-    margin-bottom:auto;
-    padding: 5px;
-    border-radius: 2px;
-    color: #73648a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin-bottom:auto;
+  padding: 5px;
+  border-radius: 2px;
+  color: #73648a;
 }
 
-  /* Recipe component */
-  .RecipesHolder{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    padding-bottom: 20px;
-    width:50%;
-    height: 50vh;
-    background-color: #9882ac7c;
-    border-radius: 5px;
-    overflow-y: scroll;
-  }
+/* Recipe component */
+.RecipesHolder{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  width:50%;
+  height: 50vh;
+  background-color: #9882ac7c;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
 
-  .Recipes{
-    font-weight: 600;
-    font-size: 20px;
-    color: white;
-    margin-top: 10px;
-  }
+.Recipes{
+  font-weight: 600;
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+}
 
 
-  .RecipeItem {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    width: 80%;
-    border-radius: 2px;
-    box-shadow: 0px 0px 2px grey;
-    background-color: #73648a;
-    color: aliceblue;
-    margin-top: 10px;
-    padding: 15px;
-    font-size: 15px;
-  }
+.RecipeItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px grey;
+  background-color: #73648a;
+  color: aliceblue;
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 15px;
+}
 
-  .recipeImg{
-    width: 150px;
-    height: 150px;
-  }
+.recipeImg{
+  width: 150px;
+  height: 150px;
+}
 
-  .right-container{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin-left: 10px;
-  }
+.right-container{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 10px;
+}
 
-  .left-container{
-    display: flex;
-    justify-content: center;
-    margin-right: 10px;
-  }
+.left-container{
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
 
-  .ingredients{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
+.ingredients{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
 
   ul{
     padding-left: 5px;
@@ -228,30 +228,30 @@
 
 /* Mobile devices */
 @media only screen and (max-width: 600px) {
-  /* Dashboard component */
-  .App {
-    margin-top: 10px;
-  }
+/* Dashboard component */
+.App {
+  margin-top: 10px;
+}
 
-  /* logo component */
-  .Logo{
-    width: 250px;
-    height: 40px;
-    border-width: 2px;
-  }
+/* logo component */
+.Logo{
+  width: 250px;
+  height: 40px;
+  border-width: 2px;
+}
 
-  /* Main component */
-  .MainInput{
-    width: 90%;
-    height: auto;
-    flex-direction: column;
-  }
+/* Main component */
+.MainInput{
+  width: 90%;
+  height: auto;
+  flex-direction: column;
+}
 
-  .InputForm{
-    height: auto;
-    width: 80%;
-    margin-bottom: 20px;
-  }
+.InputForm{
+  height: auto;
+  width: 80%;
+  margin-bottom: 20px;
+}
 
   h2, p, span{
     font-size: 16px;
@@ -269,44 +269,44 @@
     font-size: 14px;
   }
 
-  .IngredientsList{
-    height: auto;
-    width: 90%;
-  }
-
-  /* Recipe component */
-  .RecipesHolder{
-    width: 90%;
-    height: auto;
-  }
-
-  .RecipeItem {
-    width: 100%;
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .recipeImg{
-    width: 100px;
-    height: 100px;
-  }
-
-  .right-container{
-    width: 70%;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  .left-container{
-    margin-right: 5px;
-  }
-
-  ul{
-    font-size: 10px;
-  }
+.IngredientsList{
+  height: auto;
+  width: 90%;
 }
 
-/* toggle dark/loght switch */
+/* Recipe component */
+.RecipesHolder{
+  width: 90%;
+  height: auto;
+}
+
+.RecipeItem {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.recipeImg{
+  width: 100px;
+  height: 100px;
+}
+
+.right-container{
+  width: 70%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.left-container{
+  margin-right: 5px;
+}
+
+ul{
+  font-size: 10px;
+}
+}
+
+/* toggle dark/light switch */
 .switch{
   display: flex;
   justify-content: space-around;
@@ -317,10 +317,9 @@
   font-size: 15px;
   width: 150px;
   height: 45px;
-
 }
 
 #dark .switch {
-color: aliceblue;
+  color: aliceblue;
 }
 

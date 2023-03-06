@@ -1,9 +1,6 @@
-//get react lib
 import React, { useState, useEffect } from "react";
 
-//creating and exporting RecipeItem function component
 export default function RecipeItem(props) {
-  //useState and useEffect to keep track of changes
   const [rec, setRec] = useState(props.recipes.recipe);
 
   useEffect(() => {
@@ -14,7 +11,7 @@ export default function RecipeItem(props) {
     // render target data from api
     <div className="RecipeItem">
       <div className="left-container">
-        <img className="recipeImg" src={rec.image} alt="recipe"/>
+        <img className="recipeImg" src={rec.image} alt="recipe" />
         <div className="right-container">
           <div className="ingredients">
             <span>Main Ingredients:</span>
