@@ -7,8 +7,7 @@ import React, { useContext } from "react";
 //creating and exporting Logo function component, essentially
 //just a container for the logo png
 export default function Logo() {
-  const {theme} = useContext(Context);
-  console.log(theme);
+  const { theme } = useContext(Context);
   const logoSrc = theme === "light" ? MyLogo : MyLogoDark;
   return (
     <div className="Logo">
