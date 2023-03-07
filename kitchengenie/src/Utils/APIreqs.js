@@ -31,7 +31,7 @@ async function postMany(ingredients) {
     return response.json();
   } catch (error) {
     console.error(error);
-    return ingredients;
+    return [];
   }
 }
 
@@ -45,7 +45,7 @@ async function deleteOne(id) {
     return data;
   } catch (error) {
     console.error(error);
-    return id;
+    return [];
   }
 }
 
@@ -59,7 +59,7 @@ async function getRecipe() {
     return retrievedRecipe;
   } catch (error) {
     console.error(error);
-    return retrievedRecipe;
+    return [];
   }
 }
 
