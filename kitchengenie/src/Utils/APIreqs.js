@@ -27,8 +27,6 @@ async function postMany(ingredients) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(ingredients),
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Credentials": true,
     });
     const data = response.json();
     return data;
