@@ -28,7 +28,7 @@ async function postMany(ingredients) {
       },
       body: JSON.stringify(ingredients),
     });
-    return response.json();
+    return await response.json();
   } catch (error) {
     console.error(error);
     return [];
