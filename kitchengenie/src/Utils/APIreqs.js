@@ -1,6 +1,8 @@
 //utility file for fetch requests from client to server
 
-const rootURL = "http://localhost:3001";
+const rootURL = process.env.REACT_APP_API_URL
+  ? process.env.REACT_APP_API_URL
+  : "http://localhost:3001";
 
 //helper function to get all ingredients
 async function getAll() {
