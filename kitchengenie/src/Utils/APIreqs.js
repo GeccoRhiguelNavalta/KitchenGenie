@@ -13,7 +13,7 @@ async function getAll() {
       .then((fetchedData) => (retrievedData = fetchedData));
     return retrievedData;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 }
@@ -28,9 +28,10 @@ async function postMany(ingredients) {
       },
       body: JSON.stringify(ingredients),
     });
-    return await response.json();
+    const data = response.json();
+    return data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 }
@@ -44,7 +45,7 @@ async function deleteOne(id) {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 }
@@ -58,7 +59,7 @@ async function getRecipe() {
       .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
     return retrievedRecipe;
   } catch (error) {
-    console.error(error);
+    console.log(error);
     return [];
   }
 }
