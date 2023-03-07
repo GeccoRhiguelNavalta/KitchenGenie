@@ -14,6 +14,7 @@ async function getAll() {
     return retrievedData;
   } catch (error) {
     console.error(error);
+    return [];
   }
 }
 
@@ -30,6 +31,7 @@ async function postMany(ingredients) {
     return response.json();
   } catch (error) {
     console.error(error);
+    return ingredients;
   }
 }
 
@@ -43,6 +45,7 @@ async function deleteOne(id) {
     return data;
   } catch (error) {
     console.error(error);
+    return id;
   }
 }
 
@@ -55,7 +58,8 @@ async function getRecipe() {
       .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
     return retrievedRecipe;
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    return retrievedRecipe;
   }
 }
 
