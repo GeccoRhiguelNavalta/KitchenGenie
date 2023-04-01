@@ -30,10 +30,10 @@ export default function InputForm() {
     <div className="InputForm">
       <h2>ADD INGREDIENTS</h2>
       <form onSubmit={handleSubmit}>
-        <label>At least three ingredients</label>
+        <label>ADD THREE OR MORE INGREDIENTS SEPARATED BY COMMAS BEFORE ENTERING</label>
         <input
           name="ingredients"
-          placeholder="Rice,Tomato..."
+          placeholder="Example: rice,tomato,carrots"
           type="text"
           value={textValue}
           onChange={onChange}

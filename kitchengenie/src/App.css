@@ -8,16 +8,15 @@
 }
 
 #light {
-  background-color: #fcf7f8; 
+  background-color: #fcf7f8;
 }
 
 #dark {
   background-color: #453750;
 }
 
-
 /* logo component */
-.Logo{
+.Logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,24 +28,24 @@
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logoimg{
+.logoimg {
   height: 100%;
   width: 100%;
 }
 
 /* Main component */
-.MainInput{
+.MainInput {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 10px;
-  width:50%;
+  width: 50%;
   height: 30vh;
   background-color: #9882ac7c;
   border-radius: 5px;
 }
 
-.InputForm{
+.InputForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,62 +56,65 @@
   box-shadow: 0px 0px 2px grey;
   background-color: #73648a;
   contain: content;
+  text-align: center;
 }
 
-.pantry, h2, span{
+.pantry,
+h2,
+span {
   font-weight: 550;
   font-size: 20px;
   color: aliceblue;
 }
-  
-  form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap:5px;
-    font-size: 10px;
-    border-radius: 5px;
-    border-style: none;
-    color: aliceblue;
-  }
-  
-  input{
-    height: 25px;
-    width: 150px;
-    font-size: 10px;
-    text-overflow: ellipsis;
-    border-radius: 5px;
-    border: 1px solid grey;
-    text-align: center;
-  }
-  
-  button{
-    height: 20px;
-    width: 75px;
-    background-color:#9882AC;
-    border-style: none;
-    border-radius: 5px;
-    color: aliceblue;
-    font-weight: 600;
-    font-size: 12px;
-    opacity: 0.8;
-    transition-duration: 0.4s;
-  }
 
-  button:hover {
-    background-color: #453750;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); 
-  }
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  border-radius: 5px;
+  border-style: none;
+  color: aliceblue;
+}
+
+input {
+  height: 25px;
+  width: 150px;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  border-radius: 5px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+button {
+  height: 20px;
+  width: 75px;
+  background-color: #9882ac;
+  border-style: none;
+  border-radius: 5px;
+  color: aliceblue;
+  font-weight: 600;
+  font-size: 12px;
+  opacity: 0.8;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #453750;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
 
 .disabled {
   pointer-events: none;
   background-color: rgba(255, 0, 0, 0.412);
   opacity: 0.6;
 }
-  
 
 /* IngredientsList */
-.IngredientsList{
+.IngredientsList {
   display: flex;
   flex-direction: column;
   padding-left: 10px;
@@ -127,7 +129,8 @@
   overflow-y: scroll;
 }
 
-.pantry, .Recipes{
+.pantry,
+.Recipes {
   margin: auto;
   padding: 10px;
 }
@@ -143,176 +146,190 @@
   justify-content: space-between;
   align-items: center;
   width: 95%;
-  margin-bottom:auto;
+  margin-bottom: auto;
   padding: 5px;
   border-radius: 2px;
   color: #73648a;
 }
 
 /* Recipe component */
-.RecipesHolder{
+.RecipesHolder {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  width:50%;
+  width: 50%;
   height: 50vh;
   background-color: #9882ac7c;
   border-radius: 5px;
   overflow-y: scroll;
 }
 
-.Recipes{
+.Recipes {
   font-weight: 600;
   font-size: 20px;
   color: white;
   margin-top: 10px;
 }
 
-
 .RecipeItem {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   width: 80%;
   border-radius: 2px;
   box-shadow: 0px 0px 2px grey;
   background-color: #73648a;
   color: aliceblue;
   margin-top: 10px;
-  padding: 15px;
+  padding: 5px;
   font-size: 15px;
 }
 
-.recipeImg{
+.recipeImg {
   width: 150px;
   height: 150px;
 }
 
-.right-container{
+.right-container {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-left: 10px;
+  align-items: flex-start;
+  justify-content: start;
+  padding-left: 5px;
+  width: 65%;
 }
 
-.left-container{
+.foodLabel {
   display: flex;
-  justify-content: center;
-  margin-right: 10px;
+  width: 60%;
+  text-align: center;
+  object-fit: contain;
+  text-overflow: ellipsis;
 }
 
-.ingredients{
+.left-container {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+  width: 35%;
+}
+
+.ingredients {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
 
-  ul{
-    padding-left: 5px;
-    margin: 3px 0px 3px 0px;
-    font-size: 12px;
-    font-weight: 300;
-  }
+ul {
+  padding-left: 5px;
+  margin: 3px 0px 3px 0px;
+  font-size: 12px;
+  font-weight: 300;
+}
 
-  a{
-    text-decoration: none;
-    color: aliceblue;
-  }
-
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
 
 /* Mobile devices */
 @media only screen and (max-width: 600px) {
-/* Dashboard component */
-.App {
-  margin-top: 10px;
-}
+  /* Dashboard component */
+  .App {
+    margin-top: 10px;
+  }
 
-/* logo component */
-.Logo{
-  width: 250px;
-  height: 40px;
-  border-width: 2px;
-}
+  /* logo component */
+  .Logo {
+    width: 250px;
+    height: 40px;
+    border-width: 2px;
+  }
 
-/* Main component */
-.MainInput{
-  width: 90%;
-  height: auto;
-  flex-direction: column;
-}
+  /* Main component */
+  .MainInput {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
 
-.InputForm{
-  height: auto;
-  width: 80%;
-  margin-bottom: 20px;
-}
+  .InputForm {
+    height: auto;
+    width: 80%;
+    margin-bottom: 20px;
+  }
 
-  h2, p, span{
+  h2,
+  p,
+  span {
     font-size: 16px;
   }
 
-  input{
+  input {
     height: 20px;
     width: 80%;
     font-size: 12px;
   }
 
-  button{
+  button {
     height: 25px;
     width: 60%;
     font-size: 14px;
   }
 
-.IngredientsList{
-  height: auto;
-  width: 90%;
-}
+  .IngredientsList {
+    height: auto;
+    width: 90%;
+  }
 
-/* Recipe component */
-.RecipesHolder{
-  width: 90%;
-  height: auto;
-}
+  /* Recipe component */
+  .RecipesHolder {
+    width: 90%;
+    height: auto;
+  }
 
-.RecipeItem {
-  width: 100%;
-  font-size: 14px;
-  padding: 10px;
-}
+  .RecipeItem {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
 
-.recipeImg{
-  width: 100px;
-  height: 100px;
-}
+  .recipeImg {
+    width: 100px;
+    height: 100px;
+  }
 
-.right-container{
-  width: 70%;
-  margin-left: 5px;
-  margin-right: 5px;
-}
+  .right-container {
+    width: 70%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
-.left-container{
-  margin-right: 5px;
-}
+  .left-container {
+    margin-right: 5px;
+  }
 
-ul{
-  font-size: 10px;
-}
+  ul {
+    font-size: 10px;
+  }
 }
 
 /* toggle dark/light switch */
-.switch{
+.switch {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 5px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 400;
   font-size: 15px;
   width: 150px;
@@ -322,4 +339,3 @@ ul{
 #dark .switch {
   color: aliceblue;
 }
-
