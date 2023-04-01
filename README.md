@@ -28,6 +28,11 @@ The following technologies were used to develop KitchenGenie:
 
 Due to the API limitations, the app can only send ten requests per minute. Therefore, if you continuously enter or delete ingredients more than the limit, the app will have a cool down period (approx. < 1 min).
 
+### DEVS - How to get started
+
+If youre cloning this project make sure to go into kitchengenie folder - in your terminal npm i. After that go to server folder - in your terminal npm i.
+Once all packages are installed, go back to kitchengenie folder - npm run start. Go to server folder - nodemon index.js
+
 ### Conclusion
 
 KitchenGenie is a simple but effective recipe finder app that demonstrates the power of APIs and the importance of working within API limitations. With its intuitive user interface and comprehensive recipe database, KitchenGenie is the perfect tool for anyone looking to make delicious meals with the ingredients they have on hand.
