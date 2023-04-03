@@ -8,11 +8,9 @@ import ReactSwitch from "react-switch";
 import React, { useState, useEffect } from "react";
 import Context from "./Context/DataContext";
 import { getAll, getRecipe } from "./Utils/APIreqs";
-import { useAuth0 } from "@auth0/auth0-react";
 
 //main component
 function App() {
-  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   //state for light/dark mode
   const [theme, setTheme] = useState("light");
 
@@ -57,8 +55,6 @@ function App() {
 
   return (
     <div className="App" id={theme}>
-      ({isAuthenticated} && (<button onClick={() => logout()}>Log Out</button>)) : (
-      {!isAuthenticated} && (<button onClick={() => loginWithRedirect()}>Log In</button>))
       <Context.Provider
         value={{
           recipes,
