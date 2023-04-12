@@ -2,7 +2,7 @@
 
 ![alt text](https://github.com/GeccoRhiguelNavalta/KitchenGenie/blob/main/kitchengenie/src/assets/genie.png "Logo Title Text 1")
 
-# Link to deployed website: https://strong-daffodil-17f05a.netlify.app/
+# Link to deployed website: https://kitchengenieapp.netlify.app/
 
 # KitchenGenie - A Recipe Finder App
 
