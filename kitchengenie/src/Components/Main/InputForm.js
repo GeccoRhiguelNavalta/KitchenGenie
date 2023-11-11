@@ -3,18 +3,14 @@ import { postMany } from "../../Utils/APIreqs";
 import Context from "../../Context/DataContext";
 
 export default function InputForm() {
-  //usestate for text input
   const [textValue, setTextValue] = useState("");
 
-  //access ingredients from context store
   const { setIngredients } = useContext(Context);
 
-  //setting value of ingredients on event change on the form
   function onChange(event) {
     setTextValue(event.target.value);
   }
 
-  //sending values to server to store in DB
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await postMany({ ingredients: textValue.split(",") });
@@ -22,7 +18,6 @@ export default function InputForm() {
     setTextValue("");
   }
 
-  //disabled add button if no input value from client
   const ingredientsArray = textValue.split(",");
   const isDisabled = ingredientsArray.length < 3;
 
@@ -30,7 +25,9 @@ export default function InputForm() {
     <div className="InputForm">
       <h2>ADD INGREDIENTS</h2>
       <form onSubmit={handleSubmit}>
-        <label>ADD THREE OR MORE INGREDIENTS SEPARATED BY COMMAS BEFORE ENTERING</label>
+        <label>
+          ADD THREE OR MORE INGREDIENTS SEPARATED BY COMMAS BEFORE ENTERING
+        </label>
         <input
           name="ingredients"
           placeholder="Example: rice,tomato,carrots"
