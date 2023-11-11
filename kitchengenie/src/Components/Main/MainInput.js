@@ -4,7 +4,6 @@ import Context from "../../Context/DataContext.js";
 import React, { useContext } from "react";
 
 export default function MainInput() {
-  //passing data using context
   const { ingredients, setIngredients, recipes, setRecipes } =
     useContext(Context);
 

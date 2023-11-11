@@ -1,10 +1,7 @@
-//utility file for fetch requests from client to server
-
 const rootURL = process.env.REACT_APP_API_URL
   ? process.env.REACT_APP_API_URL
   : "http://localhost:3001";
 
-//helper function to get all ingredients
 async function getAll() {
   let retrievedData = [];
   try {
@@ -13,12 +10,11 @@ async function getAll() {
       .then((fetchedData) => (retrievedData = fetchedData));
     return retrievedData;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return [];
   }
 }
 
-//helper function to post a new ingredient
 async function postMany(ingredients) {
   try {
     const response = await fetch(`${rootURL}/add`, {
@@ -31,12 +27,11 @@ async function postMany(ingredients) {
     const data = response.json();
     return data;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return [];
   }
 }
 
-//helper function to delete an ingredient
 async function deleteOne(id) {
   try {
     const response = await fetch(`${rootURL}/${id}`, {
@@ -45,12 +40,11 @@ async function deleteOne(id) {
     const data = await response.json();
     return data;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return [];
   }
 }
 
-//helper function to get recipes from database that has clients ingredients
 async function getRecipe() {
   try {
     let retrievedRecipe = [];
@@ -59,7 +53,7 @@ async function getRecipe() {
       .then((fetchedRecipe) => (retrievedRecipe = fetchedRecipe));
     return retrievedRecipe;
   } catch (error) {
-    // console.log(error);
+    console.log(error);
     return [];
   }
 }
