@@ -1,6 +1,4 @@
 import "./App.css";
-// import LoginButton from './Components/LoginButton';
-// import LogoutButton from './Components/LogoutButton';
 import Logo from "./Components/Logo";
 import MainInput from "./Components/Main/MainInput";
 import RecipesHolder from "./Components/Recipes/RecipesHolder";

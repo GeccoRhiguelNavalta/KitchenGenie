@@ -18,16 +18,10 @@ export default function InputForm() {
     setTextValue("");
   }
 
-  const ingredientsArray = textValue.split(",");
-  const isDisabled = ingredientsArray.length < 3;
-
   return (
     <div className="InputForm">
       <h2>ADD INGREDIENTS</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          ADD THREE OR MORE INGREDIENTS SEPARATED BY COMMAS BEFORE ENTERING
-        </label>
         <input
           name="ingredients"
           placeholder="Example: rice,tomato,carrots"
@@ -35,13 +29,7 @@ export default function InputForm() {
           value={textValue}
           onChange={onChange}
         />
-        <button
-          type="Add"
-          disabled={isDisabled}
-          className={isDisabled ? "disabled" : ""}
-        >
-          Add
-        </button>
+        <button>Add</button>
       </form>
     </div>
   );
